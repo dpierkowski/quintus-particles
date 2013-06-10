@@ -29,8 +29,6 @@ window.addEventListener("load", function() {
 			p.vy += p.ay * dt + Q.gravityY * dt * p.gravity;
 			p.x += p.vx * dt;
 			p.y += p.vy * dt;
-
-			this.entity.stage.collide(this.entity);
 	    }
 	});
 
@@ -82,14 +80,14 @@ window.addEventListener("load", function() {
 		},
 		step: function(dt) {
 			if (this.p.vy >= 0) {
-				for (var i=0;i<40;i++) {
+				for (var i=0;i<30;i++) {
 					
 					var v = 1 - Math.random() * 2;
 					var vx = 60 * v;
 					var vy = 60 * Math.sqrt(1 - v * v) * (Math.random() > 0.5 ? 1 : -1);
 					this.stage.insert(new Q.Spark({x:this.p.x, y:this.p.y, vx: vx, vy: vy, cx:4, cy:4, gravity: 100}, this.color));
 
-					for (var j=0;j<3;j++) {
+					for (var j=0;j<4;j++) {
 						var v1 = 60 - Math.random() * 60;
 						var v2 = 1 - Math.random() * 2;
 						var vx = v1 * v2;
