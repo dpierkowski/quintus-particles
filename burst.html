@@ -1,0 +1,50 @@
+<html>
+  <style>
+  
+  </style>
+  <head>
+    <!-- Pull the engine from the Quintus CDN or load it locally -->
+    <!--<script src='http://cdn.html5quintus.com/v0.0.5/quintus-all.min.js'></script>-->
+    <script type="text/javascript" src="lib/quintus.js"></script>
+    <script type="text/javascript" src="lib/quintus_2d.js"></script>
+    <script type="text/javascript" src="lib/quintus_anim.js"></script>
+    <script type="text/javascript" src="lib/quintus_audio.js"></script>
+    <script type="text/javascript" src="lib/quintus_input.js"></script>
+    <script type="text/javascript" src="lib/quintus_scenes.js"></script>
+    <script type="text/javascript" src="lib/quintus_sprites.js"></script>
+    <script type="text/javascript" src="lib/quintus_touch.js"></script>
+    <script type="text/javascript" src="lib/quintus_ui.js"></script>
+    <script type="text/javascript" src="libexternal/pathfinding-browser.js"></script>
+    <script src="libexternal/d3.v3.min.js"></script>
+    <script src="libexternal/jquery-latest.js"></script>
+
+    <script type="text/javascript" src="burst.js"></script>
+
+  </head>
+   <body>
+
+      <label for = "playgame">Play:</label>
+      <input type="checkbox" id="playgame" checked>
+      <input type="button" id="step" value="Step">
+
+      <canvas id="quintus"  width="480" height="480" bgcolor="black"></canvas>
+
+      <script>
+        $('#playgame').click(function() {
+          if(window.Q){
+            var $this = $(this);
+            if ($this.is(':checked')) {
+              window.Q.unpauseGame();
+            } else {
+              window.Q.pauseGame();
+            }
+          }
+        });
+        $('#step').click(function() {
+          if(window.Q) {
+            window.Q.stageGameLoop(100000);
+          }
+        });
+      </script>
+   </body>
+</html>
