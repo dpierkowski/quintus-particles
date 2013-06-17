@@ -152,11 +152,12 @@ window.addEventListener("load", function() {
 		stage.insert(new Q.FireworkLauncher({x:120, y:240, cx:0, cy:0}, stage));
 	});
 	
-	Q.load("level480.json,tiles.png,dog.png,background.png", function() {
+	Q.load("level480.json,tiles.png,background.png", function() {
 				 Q.sheet("tiles", "tiles.png", {
 			 tilew: Q.tileDimension,
              tileh: Q.tileDimension
           });
 		Q.stageScene("level1",0);
+		Q.pauseGame();
 	});
 });

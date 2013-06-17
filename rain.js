@@ -118,7 +118,8 @@ window.addEventListener("load", function() {
 		stage.insert(new Q.RainDripper({x:120, y:0, cx:120, cy:0}, stage));
 	});
 	
-	Q.load("level480.json,tiles.png,dog.png,background.png", function() {
+	Q.load("level480.json,tiles.png,background.png", function() {
 		Q.stageScene("level1",0);
+		Q.pauseGame();
 	});
 });
